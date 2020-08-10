@@ -38,7 +38,7 @@ public class UserController {
 
     @ApiOperation("根据性别查找用户")
     @RequestMapping(value = "/selectUserBySex", method = RequestMethod.POST)
-    public User getUserBySex(Integer sex) {
+    public List<User> getUserBySex(Integer sex) {
         return userService.selectUserBySex(sex);
     }
 
@@ -47,6 +47,18 @@ public class UserController {
     @RequestMapping(value = "/userLogin", method = RequestMethod.GET)
     public User getUserByNameAndPassword(User user) {
         return userService.getUserByNameAndPassword(user);
+    }
+
+    @ApiOperation("用户是否存在")
+    @RequestMapping(value = "/userIsExist", method = RequestMethod.POST)
+    public Integer userIsExist(User user) {
+        return userService.userIsExist(user);
+    }
+
+    @ApiOperation("添加用户")
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public int insertUser(User user) {
+        return userService.insertUser(user);
     }
 
 }
