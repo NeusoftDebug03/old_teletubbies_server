@@ -14,4 +14,23 @@
         where `userId` = #{userId, jdbcType=VARCHAR};
     </select>
 
+    <select id="selectUserByName" resultType="User">
+        select *
+        from `user`
+        where `userName` = #{userName, jdbcType=VARCHAR};
+    </select>
+
+    <select id="selectUserBySex" resultType="User">
+        select *
+        from `user`
+        where `userSex` = #{userSex};
+    </select>
+    
+    
+    <select id="getUserByPassword" resultType="User">
+        select `userId`,`userName`,`userSex`,`userImg`,`delTag`
+        from `user`
+        where `userId` = #{userId} and `password` = #{password};
+    </select>
+    
 </mapper>

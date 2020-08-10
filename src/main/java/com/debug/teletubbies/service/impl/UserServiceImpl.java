@@ -21,4 +21,22 @@ public class UserServiceImpl implements UserService {
     public User selectUserByID(String id) {
         return userMapper.selectUserByID(id);
     }
+
+    @Override
+    public User selectUserByName(String name) {
+        return userMapper.selectUserByName(name);
+    }
+
+    @Override
+    public User selectUserBySex(Integer sex) {
+        return userMapper.selectUserBySex(sex);
+    }
+
+    // 用户登录
+    @Override
+    public User getUserByNameAndPassword(User user) {
+        return userMapper.getUserByNameAndPassword(user);
+    }
+
+
 }

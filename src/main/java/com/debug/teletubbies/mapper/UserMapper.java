@@ -8,4 +8,11 @@ public interface UserMapper {
      List<User> selectUserList();
 
      User selectUserByID(String id);
+
+     User selectUserByName(String name);
+
+     User selectUserBySex(Integer sex);
+
+     // 用户登录
+     User getUserByNameAndPassword(User user);
 }
