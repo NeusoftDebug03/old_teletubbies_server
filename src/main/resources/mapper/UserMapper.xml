@@ -27,7 +27,7 @@
     </select>
     
     
-    <select id="getUserByPassword" resultType="User">
+    <select id="getUserByNameAndPassword" resultType="User">
         select `userId`,`userName`,`userSex`,`userImg`,`delTag`
         from `user`
         where `userId` = #{userId} and `password` = #{password};
