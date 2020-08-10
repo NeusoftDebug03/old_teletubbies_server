@@ -9,10 +9,15 @@ public interface UserService {
 
     User selectUserByName(String name);
 
-    User selectUserBySex(Integer sex);
+    List<User> selectUserBySex(Integer sex);
 
     // 用户登录
     User getUserByNameAndPassword(User user);
 
+    // 用户是否存在
+    Integer userIsExist(User user);
+
+    // 添加用户
+    int insertUser(User user);
 }
 

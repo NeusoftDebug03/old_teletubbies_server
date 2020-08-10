@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User selectUserBySex(Integer sex) {
+    public List<User> selectUserBySex(Integer sex) {
         return userMapper.selectUserBySex(sex);
     }
 
@@ -36,6 +36,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserByNameAndPassword(User user) {
         return userMapper.getUserByNameAndPassword(user);
+    }
+
+    // 用户是否存在
+    @Override
+    public Integer userIsExist(User user) {
+        return userMapper.userIsExist(user);
+    }
+
+    // 添加用户
+    @Override
+    public int insertUser(User user) {
+        return userMapper.insertUser(user);
     }
 
 

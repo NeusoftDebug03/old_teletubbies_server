@@ -11,13 +11,13 @@
     <select id="selectUserByID" resultType="User">
         select *
         from `user`
-        where `userId` = #{userId, jdbcType=VARCHAR};
+        where `userId` = #{userId};
     </select>
 
     <select id="selectUserByName" resultType="User">
         select *
         from `user`
-        where `userName` = #{userName, jdbcType=VARCHAR};
+        where `userName` = #{userName};
     </select>
 
     <select id="selectUserBySex" resultType="User">
@@ -25,12 +25,25 @@
         from `user`
         where `userSex` = #{userSex};
     </select>
-    
-    
+
+    <!--  用户登录：通过id和password查找用户是否存在-->
     <select id="getUserByNameAndPassword" resultType="User">
         select `userId`,`userName`,`userSex`,`userImg`,`delTag`
         from `user`
         where `userId` = #{userId} and `password` = #{password};
     </select>
-    
+
+    <!--  通过ID查询用户是否存在  -->
+    <select id="userIsExist" resultType="Integer">
+        select count(userId)
+        from `user`
+        where userId = #{userId};
+    </select>
+
+    <!--  添加用户  -->
+    <insert id="insertUser" parameterType="User">
+        insert into `user` (`userId`,`password`,`userName`,`userSex`)
+        value (#{userId}, #{password}, #{userName}, #{userSex});
+    </insert>
+
 </mapper>
