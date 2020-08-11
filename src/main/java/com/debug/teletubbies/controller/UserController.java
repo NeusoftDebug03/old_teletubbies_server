@@ -44,7 +44,7 @@ public class UserController {
 
 
     @ApiOperation("用户登录")
-    @RequestMapping(value = "/userLogin", method = RequestMethod.GET)
+    @RequestMapping(value = "/userLogin", method = RequestMethod.POST)
     public User getUserByNameAndPassword(User user) {
         return userService.getUserByNameAndPassword(user);
     }

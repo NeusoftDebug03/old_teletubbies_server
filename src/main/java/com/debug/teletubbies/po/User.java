@@ -22,10 +22,11 @@ public class User {
     @ApiModelProperty(value = "用户是否正常")
     private Integer delTag;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(String userId,String password,String
-            userName,Integer userSex,String userImg) {
+    public User(String userId, String password, String
+            userName, Integer userSex, String userImg) {
         this.userId = userId;
         this.password = password;
         this.userName = userName;

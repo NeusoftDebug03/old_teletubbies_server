@@ -1,6 +1,5 @@
 package com.debug.teletubbies.po;
 
-import java.math.BigDecimal;
 
 public class Food {
 
@@ -8,14 +7,14 @@ public class Food {
     private String foodName;
     private String foodExplain;
     private String foodImg;
-    private BigDecimal foodPrice;
+    private Double foodPrice;
     private Integer businessId;
     private String remarks;
 
     public Food() {
     }
 
-    public Food(Integer foodId, String foodName, String foodExplain, String foodImg, BigDecimal foodPrice, Integer businessId, String remarks) {
+    public Food(Integer foodId, String foodName, String foodExplain, String foodImg, Double foodPrice, Integer businessId, String remarks) {
         this.foodId = foodId;
         this.foodName = foodName;
         this.foodExplain = foodExplain;
@@ -57,11 +56,11 @@ public class Food {
         this.foodImg = foodImg;
     }
 
-    public BigDecimal getFoodPrice() {
+    public Double getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(BigDecimal foodPrice) {
+    public void setFoodPrice(Double foodPrice) {
         this.foodPrice = foodPrice;
     }
 
